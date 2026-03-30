@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:console.kalix.io)",
+      "WebFetch(domain:developer.lightbend.com)",
+      "WebFetch(domain:www.lightbend.com)",
+      "WebFetch(domain:doc.akka.io)",
+      "WebFetch(domain:lightbend.github.io)",
+      "WebFetch(domain:docs.kalix.io)",
+      "WebFetch(domain:akka.io)"
+    ]
+  }
+}

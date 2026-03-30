@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --font: "Instrument Sans", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --view-transition-duration: 200ms;
+  --view-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(slide-content) {
+  animation: var(--view-transition-duration) var(--view-transition-easing) both vt-slide-out-left;
+}
+
+::view-transition-new(slide-content) {
+  animation: var(--view-transition-duration) var(--view-transition-easing) both vt-slide-in-right;
+}
+
+@keyframes vt-slide-out-left {
+  to { opacity: 0; transform: translateX(-30px); }
+}
+
+@keyframes vt-slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
